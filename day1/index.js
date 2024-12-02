@@ -25,3 +25,16 @@ distances.forEach(distance => {
 });
 
 console.log('total distance: ', totalDistance);
+
+const getSimilarity = (arr1, arr2) => {
+    let similarityValue = 0;
+    arr1.forEach(element => {
+        const tmpArr = arr2.filter(element2 => element === element2);
+        similarityValue += (element * tmpArr.length);
+    })
+
+    return similarityValue;
+
+}
+
+console.log('similarity:', getSimilarity(arr1, arr2));
